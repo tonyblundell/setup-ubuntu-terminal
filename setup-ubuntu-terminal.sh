@@ -7,9 +7,6 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 # Change default shell to ZSH
 chsh -s /usr/bin/zsh
 
-# Set 256 color mode for ZSH and tmux
-echo "set -g terminal-overrides 'xterm:colors=256'" >> .tmux.conf
-
 # Set solarized colors for terminal
 cd ~
 git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
@@ -19,7 +16,12 @@ chmod u+x set_dark.sh
 cd ~
 rm -rf gnome-terminal-colors-solarized
 
+# Install tmux config
+git clone https://github.com/tonyblundell/.tmux.git
+ln -s .tmux/tmux.conf .tmux.conf
+
 # Install vim config
+cd ~
 git clone --recursive https://github.com/tonyblundell/.vim.git
 ln -s .vim/vimrc .vimrc
 
