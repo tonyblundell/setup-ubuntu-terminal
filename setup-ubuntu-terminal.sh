@@ -7,6 +7,13 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 # Change default shell to ZSH
 chsh -s /usr/bin/zsh
 
+# Install ZSH config
+cd ~
+git clone https://github.com/tonyblundell/.zsh
+ln -s ~/.zsh/tonyblundell.zsh-theme ~/.oh-my-zsh/themes
+rm ~/.zshrc
+ln -s ~/.zsh/zshrc ~/.zshrc
+
 # Set solarized colors for terminal
 cd ~
 git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
